@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <audio src="./assets/sounds/Aqua_Caelestis.mp3"></audio>
+      <div class="player-controls">
+        <button class="play-prev player-icon"></button>
+        <button class="play player-icon"></button>
+        <button class="play-next player-icon"></button>
+        <div class="progress-container">
+          <div class="duration-player">
+            <div class="track_title">Aqua_Caelestis</div>
+            <input type="range" class="progress" />
+          </div>
+          <div class="audio-time">
+            <div class="audio-time__current">0:00</div>
+            <div class="divider">/</div>
+            <div class="audio-time__length">0:00</div>
+          </div>
+          <div class="volume-container">
+            <button class="volume"></button>
+            <input type="range" value="45" class="volume-progress" /></div>
+        </div>
+        </div>
+       
+      <ul class="play-list"></ul>
+    </div>
+    <div class="weather">
+      <input type="text" class="city" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name"/>
+    </div>
+  </main>
+  <footer class="footer">
+    <button class="settings" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"></button>
+    <!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title settin" id="staticBackdropLabel">settings</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button langSetting" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Language
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <button class="english">English</button>
+                <button class="russian" >Russian</button>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed pictSetting" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Picture Sourse
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <div class="picture-source">
+                  <button class="github">GitHub</button>
+                <button class="unsplash">Unsplash API</button>
+                <button class="flickr">Flickr API</button>
+                </div>
+                <div class="tags-container">
+                  <p>Add theme for pictures (with coma separator):</p><input type="text" class="taginput"> <button class="addtags">Add</button>
+                  <div class="added-tags"></div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed displaySetting" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                View blocks
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body displays">
+                <label class="checkWeather" for="weatherS"><span class="checkWeatherS">Whether</span>
+                  <input type="checkbox" id="weatherS" >
+                  <span class="checkmark"></span>
+                </label> 
+                <label class="checkPlayer" for="playerS"><span class="checkPlayerS">Audio player </span>
+                  <input type="checkbox" id="playerS" >
+                  <span class="checkmark"></span>
+                </label>
+                <label class="checkQuotes" for="quoterS"><span class="checkQuotesS">Quotes</span> 
+                  <input type="checkbox" id="quoterS" >
+                  <span class="checkmark"></span>
+                </label> 
+                <label class="checkGreetin" for="greetingsS"><span class="checkGreetinS">Greeting </span>
+                  <input type="checkbox" id="greetingsS" >
+                  <span class="checkmark"></span>
+                </label>
+                <label class="checkTime" for="timeS"><span class="checkTimeS">Time</span> 
+                  <input type="checkbox" id="timeS" >
+                  <span class="checkmark"></span>
+                </label>
+                <label class="checkDate" for="dateS"><span class="checkDateS">Date</span>
+                  <input type="checkbox" id="dateS" >
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <button class="change-quote"></button>
+    <div class="quote-container">
+      <div class="quote"></div>
+      <div class="author"></div>
+    </div>
+
+    <div class="github">
+      <div><a href="https://github.com/lena-r-a" target="_blank">Github,2021</a></div>
+      <div><a href="https://rs.school/js/" target="_blank"><img width="40px" height="30px" src="https://rs.school/images/rs_school_js.svg" alt="rs"></a></div>
+    </div>
+
+    <div class="main_links">
+      <h2>Links</h2>
+      <ul class="link-list"></ul>
+      <button class="new-link_add">+ Add new link</button>
+      <form class="new-link_add-container">
+        <input type="text" class="link-name" required>
+        <input type="text" class="link-adress" required>
+        <button class="addLink" type="button">Add</button>
+      </form>
+    </div>
+    <button class="openLinks">Links</button>
+  </footer>
+  <script type="module" src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
